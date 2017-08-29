@@ -3,7 +3,7 @@
     <el-menu :default-active="activeIndex1" class="el-menu-demo" mode="horizontal">
       <div class="logo"><i class="i-logo dis-in-b"></i>共享吧</div>
       <el-menu-item index="1">购物车</el-menu-item>
-      <el-button type="primary" class="login-btn" @click="login">登录</el-button>
+      <el-button type="primary" class="login-btn" @click.native="login">登录</el-button>
       <el-button class="register-btn">注册</el-button>
       <!--  <el-submenu index="2">
        <template slot="title"><i class="i-user dis-in-b"></i></template>
@@ -26,8 +26,7 @@ export default {
   methods: {
     login() {
       console.log(this.$router)
-
-      this.$router.push({
+     this.$router.push({
         name: 'login'
       })
     }

@@ -1,6 +1,11 @@
 <template>
   <div>
+  <template v-if="id==''||id==undefined">
     <m-header></m-header>
+    </template>
+    <template v-else>
+  欢迎进入共享吧
+    </template>
   </div>
 </template>
 <script>
@@ -12,13 +17,18 @@ export default {
   data() {
     return {
       activeIndex: '1',
-      activeIndex2: '1'
+      activeIndex2: '1',
+      id: ''
     };
   },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     }
+  },
+  mounted() {
+    this.id = this.$route.params.id;
+    console.log(this.id)
   }
 }
 
